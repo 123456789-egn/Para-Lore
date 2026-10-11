@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi bonita Lore ❤️ Un Viaje 🚀</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- Fondo de Estrellas, Nebulosas y Cosmos -->
+    <canvas id="universeCanvas"></canvas>
+
+    <!-- Contenedor Principal / Intro -->
+    <div id="intro-container" class="glass-box">
+        <!-- Espacio para la foto de Lore -->
+        <div class="photo-container">
+            <img src="lore.jpg" alt="Mi bonita Lore" id="lorePhoto" onerror="this.src='https://via.placeholder.com/130/ffb6c1/ffffff?text=Mi+Bonita'">
+        </div>
+
+        <h1>Para mi bonita Lore ❤️</h1>
+        <p>Tengo algo muy especial que preguntarle🙈 pero antes... emprendamos un pequeño viaje por el universo 🙈🌌</p>
+
+        <button id="startJourneyBtn" class="btn-primary">Comenzar Viaje 🚀</button>
+    </div>
+
+    <!-- Textos flotantes durante el trayecto -->
+    <div id="journey-text" class="floating-text"></div>
+
+    <!-- Pregunta Final al Alunizar -->
+    <div id="proposal-container" class="hidden glass-box">
+        <h2 class="romantic-title">Mi bonita Lore❤️</h2>
+        <p class="proposal-question">¿Quiere ser mi novia?🙈❤️</p>
+        <div class="proposal-buttons">
+            <button id="yesBtn" class="btn-yes">Sí, quiero 💖</button>
+            <button id="noBtn" class="btn-no">No 🙈</button>
+        </div>
+    </div>
+
+    <!-- Mensaje de éxito final con tu texto especial -->
+    <div id="success-message" class="hidden glass-box success-box">
+        <!-- Foto en la pantalla de éxito -->
+        <div class="photo-container small">
+            <img src="lore.jpg" alt="Mi bonita Lore" onerror="this.src='https://via.placeholder.com/100/ffb6c1/ffffff?text=❤️'">
+        </div>
+        <h2 class="romantic-title">¡Mi amada bonita!❤️🎉</h2>
+        <p>Ha hecho que mi universo brille mucho más❤️ Gracias por ser la casualidad mas bonita y por ser el suspiro mas sincero lleno de paz❤️❤️❤️</p>
+        
+        <!-- Tu texto dedicado -->
+        <div class="romantic-letter">
+            <p>Le confieso que me gustan muchos estilos de música. He escuchado canciones de todo tipo; melodías capaces de erizar la piel y letras que permanecen en la memoria❤️</p>
+            <p>Pero un día escuché una melodía que nunca antes había oído. Duró apenas unos segundos... Le recuerdo, fue fuera de un café…para ser más exactos, fuera de Café San Rafael🙈…unos pocos segundos que bastaron para convertirse en el sonido más hermoso que mis oídos habían conocido.</p>
+            <p>Su dulzura resonó en lo más profundo de mí. Fue tan delicada, tan mágica, que por un instante sentí como si el viento susurrara una canción; una serenata bajo la luz de la luna, una obra perfecta que no necesitaba escenario. Una melodía que aún sigue haciéndome cosquillas en el alma y erizando mi piel con su extraña sensación de paz.</p>
+            <p>Jamás he vuelto a escuchar esa melodía. Y, sin embargo, nunca desapareció. No se la llevó el viento ni el tiempo. Sigue viviendo en mi memoria, escondida entre el sonido de la lluvia, entre las canciones que escucho y en los silencios de mis días. A veces incluso aparece en mis pensamientos, como un eco que se niega a desaparecer.</p>
+            <p>Aquella voz, tan delicada y al mismo tiempo tan firme, me sorprendió por completo. No era como la había imaginado antes de escucharla. Tenía una mezcla de suavidad y firmeza que consiguió quedarse en mi memoria desde el primer instante.</p>
+            <p>Entonces comprendí cuál era la melodía que tanto buscaba.❤️❤️❤️</p>
+            <p class="letter-conclusion"><strong>❤️La melodía más hermosa que he escuchado... es, simplemente, su voz❤️</strong></p>
+        </div>
+
+        <button id="restartBtn" class="btn-primary">Quiere volver a viajar🙈🚀</button>
+    </div>
+
+    <!-- Canción predeterminada -->
+    <audio id="bgAudio" src="mi_cancion.mp3" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
