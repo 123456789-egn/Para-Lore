@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #030308;
+    color: #ffffff;
+}
+
+#universeCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Cajas de Estilo Glassmorphism con brillo elegante */
+.glass-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: rgba(20, 15, 35, 0.88);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 182, 193, 0.25);
+    padding: 30px 35px;
+    border-radius: 24px;
+    text-align: center;
+    max-width: 480px;
+    width: 90%;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 117, 140, 0.2);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Caja de éxito con scroll para la carta */
+.success-box {
+    max-height: 85vh;
+    overflow-y: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/* Estilo personalizado para la barra de desplazamiento */
+.success-box::-webkit-scrollbar {
+    width: 6px;
+}
+.success-box::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+.success-box::-webkit-scrollbar-thumb {
+    background: rgba(255, 117, 140, 0.4);
+    border-radius: 10px;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.85);
+}
+
+/* Estilos de la Foto de ella */
+.photo-container {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, #ff758c, #ffb6c1);
+    box-shadow: 0 0 20px rgba(255, 117, 140, 0.6);
+}
+
+.photo-container.small {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h1, .romantic-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #ffb6c1;
+    margin-bottom: 10px;
+    text-shadow: 0 0 12px rgba(255, 182, 193, 0.6);
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+}
+
+/* Estilo para la carta romántica integrada */
+.romantic-letter {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 182, 193, 0.15);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.romantic-letter p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: #f1dede;
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+.letter-conclusion {
+    text-align: center !important;
+    font-style: italic;
+    color: #ffb6c1;
+    font-size: 1rem;
+    margin-top: 15px;
+    text-shadow: 0 0 8px rgba(255, 182, 193, 0.4);
+}
+
+/* Botones estilo romántico */
+.btn-primary, .btn-yes, .btn-no {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 117, 140, 0.7);
+}
+
+/* Textos flotantes poéticos durante el trayecto */
+.floating-text {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    font-size: 1.8rem;
+    font-family: 'Great Vibes', cursive;
+    color: #ffb6c1;
+    text-shadow: 0 0 18px rgba(255, 182, 193, 0.9);
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    pointer-events: none;
+    text-align: center;
+    width: 90%;
+}
+
+/* Pregunta Final */
+.proposal-question {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.proposal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    min-height: 60px;
+}
+
+.btn-yes {
+    background: linear-gradient(135deg, #ff477e, #ff758c);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 71, 126, 0.5);
+    z-index: 20;
+}
+
+.btn-yes:hover {
+    transform: scale(1.08);
+}
+
+.btn-no {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffe0e6;
+    position: relative;
+    transition: transform 0.15s ease-out;
+    z-index: 20;
+}
